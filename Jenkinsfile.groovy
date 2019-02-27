@@ -6,4 +6,6 @@ try {
 			echo "TimeStamp: ${currentBuild.startTimeInMillis}"
 		}
 	}
+}catch{
+
 }
