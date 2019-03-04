@@ -3,7 +3,7 @@ import de.otto.plm.Gatekeeper
 import hudson.model.ParametersAction
 import hudson.model.StringParameterValue
 
-def build = currentBuild.getRawBuild();
+def build = currentBuild.getRawBuild()
 
 def NAME = 'dev-jfaehrma-test'
 
