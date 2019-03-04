@@ -1,7 +1,6 @@
 @Library("gatekeeper-library")
 import de.otto.plm.Gatekeeper
 import hudson.model.ParametersAction
-import hudson.model.ParameterValue
 import hudson.model.StringParameterValue
 
 def NAME = 'dev-jfaehrma-test'
