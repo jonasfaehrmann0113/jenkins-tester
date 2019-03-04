@@ -16,7 +16,7 @@ try {
 	}
 if (Gatekeeper.isGateOpen()) {
         println "Gate is open. Starting production deployment."
-	build job: "${NAME}-prod", parameters: [string(name: "BUILD_VERSION", value: BUILD_VERSION], wait: false
+	build job: "${NAME}-prod", parameters: [string(name: "BUILD_VERSION", value: BUILD_VERSION)], wait: false
     } else {
         println "Gate is closed."
 }
