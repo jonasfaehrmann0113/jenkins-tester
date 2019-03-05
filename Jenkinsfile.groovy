@@ -26,7 +26,7 @@ if (Gatekeeper.isGateOpen()) {
 
 @NonCPS
 def setBuildVersion(){
-	def buildVersionParam = new StringParameterValue('BUILD_VERSION', "1.${new SimpleDateFormat("yyyyMMddHHmmssmmm").format(currentBuild.startTimeInMillis)}", "The build version.")
+	def buildVersionParam = new StringParameterValue('BUILD_VERSION', "1.${new SimpleDateFormat("yyyyMMddHHmmss").format(currentBuild.startTimeInMillis)}", "The build version.")
 	def build = currentBuild.getRawBuild()
 	build.actions.add(new ParametersAction(buildVersionParam))
 }
