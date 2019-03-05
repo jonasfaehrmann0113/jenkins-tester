@@ -2,6 +2,7 @@
 import de.otto.plm.Gatekeeper
 import hudson.model.ParametersAction
 import hudson.model.StringParameterValue
+import java.text.SimpleDateFormat
 
 def NAME = 'dev-jfaehrma-test'
 
@@ -25,7 +26,7 @@ if (Gatekeeper.isGateOpen()) {
 
 @NonCPS
 def setBuildVersion(){
-	def buildVersionParam = new StringParameterValue('BUILD_VERSION', "1.${currentBuild.startTimeInMillis}", "The build version.")
+	def buildVersionParam = new StringParameterValue('BUILD_VERSION', "1.${new SimpleDateFormat("yyyyMMddHHmm").format(currentBuild.startTimeInMillis)}", "The build version.")
 	def build = currentBuild.getRawBuild()
 	build.actions.add(new ParametersAction(buildVersionParam))
 }
