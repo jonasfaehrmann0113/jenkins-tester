@@ -14,6 +14,11 @@ try {
 			echo BUILD_VERSION
 		}
 	}
+	mail(
+       		body: "Hallo,\n\nin der plm-mail-configuration-int Pipeline ist ein Fehler aufgetreten",
+       		subject: "Fehler in der plm-mail-configuration-int Pipeline",
+       		to: "8ecd9a24.og2gether.onmicrosoft.com@emea.teams.ms"
+	)
 if (Gatekeeper.isGateOpen()) {
         println "Gate is open. Starting production deployment."
 	build job: "${NAME}-prod", parameters: [string(name: "BUILD_VERSION", value: BUILD_VERSION)], wait: false
