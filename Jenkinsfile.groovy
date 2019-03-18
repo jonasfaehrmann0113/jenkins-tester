@@ -21,7 +21,11 @@ if (Gatekeeper.isGateOpen()) {
         println "Gate is closed."
 }
 } catch (error) {
-	println error
+	mail(
+       		body: "Hallo,\n\nin der plm-mail-configuration-int Pipeline ist ein Fehler aufgetreten",
+       		subject: "Fehler in der plm-mail-configuration-int Pipeline",
+       		to: "8ecd9a24.og2gether.onmicrosoft.com@emea.teams.ms"
+	)
 }
 
 @NonCPS
